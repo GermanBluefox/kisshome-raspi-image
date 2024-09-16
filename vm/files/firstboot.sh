@@ -4,7 +4,7 @@
 
 echo '>>> Starting firstboot.sh'
 
-# resize root partion to possible maximum
+# resize root partition to possible maximum
 echo -n 'Resizing root partition... '
 raspi-config nonint do_expand_rootfs
 echo 'Done.'
