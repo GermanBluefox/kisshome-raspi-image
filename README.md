@@ -13,8 +13,9 @@ sudo apt install git
 cd /opt
 sudo git clone https://github.com/GermanBluefox/kisshome-raspi-image
 cd kisshome-raspi-image/vm
-sudo chmod x+ *.sh
+sudo chmod +x *.sh
 cd ./files
-sudo chmod x+ *.sh
-./start.sh
+sudo chmod +x *.sh
+cd ..
+sudo ./start.sh
 ```
