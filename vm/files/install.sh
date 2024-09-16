@@ -3,6 +3,7 @@ sudo apt-get update
 sudo apt-get upgrade -y
 sudo systemctl enable ssh
 sudo systemctl start ssh
+sudo apt-get install -y ntpdate
 
 sudo useradd -m -G root iob
 # create iobroker user
@@ -13,13 +14,13 @@ sudo sed -i 's/^#\?\s*PermitRootLogin\s.*/PermitRootLogin no/' "/etc/ssh/sshd_co
 sudo systemctl restart sshd
 
 # Copy rc.local to iob user
-sudo cp /dist/rc.local /etc/rc.local
-sudo chwon iob:root /etc/rc.local
+sudo cp /opt/kisshome-raspi-image/vm/files/rc.local /etc/rc.local
+sudo chown iob:root /etc/rc.local
 sudo chmod 775 /etc/rc.local
 sudo systemctl enable rc-local
 
-sudo cp /dist/firstboot.sh /home/iob/firstboot.sh
-sudo chwon iob:root /home/iob/firstboot.sh
+sudo cp /opt/kisshome-raspi-image/vm/files/firstboot.sh /home/iob/firstboot.sh
+sudo chown iob:root /home/iob/firstboot.sh
 sudo chmod 775 /home/iob/firstboot.sh
 
 
