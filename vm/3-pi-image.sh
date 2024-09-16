@@ -2,7 +2,7 @@
 sudo apt-get install qemu-utils
 sudo docker pull ptrsr/pi-ci
 
-sudo mkdir /dist
+sudo mkdir -p /dist
 sudo cp ./files/* /dist
 
 # Resize image to 4GB
