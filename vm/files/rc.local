@@ -14,10 +14,10 @@ if [ "$_IP" ]; then
 fi
 
 # runs firstboot.sh only on verty first boot
-if [ ! -e /root/firstboot_done ]; then
-  touch /root/firstboot_done
-  if [ -e /root/firstboot.sh ]; then
-    /root/firstboot.sh
+if [ ! -e /home/iob/firstboot_done ]; then
+  touch /home/iob/firstboot_done
+  if [ -e /home/iob/firstboot.sh ]; then
+    /home/iob/firstboot.sh
   fi
 fi
 
