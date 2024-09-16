@@ -13,7 +13,7 @@ if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
 
-# runs firstboot.sh only on verty first boot
+# runs firstboot.sh only on very first boot
 if [ ! -e /home/iob/firstboot_done ]; then
   touch /home/iob/firstboot_done
   if [ -e /home/iob/firstboot.sh ]; then
@@ -27,7 +27,7 @@ if [ ! -f /etc/shadow ]; then
     exit 0
 fi
 
-if grep -q "PTalgNjj3ZbVhdiGr" /etc/shadow; then
+if grep -q "5pcMzp7pjoCxtbp" /etc/shadow; then
     echo "The default password for iob user must be changed"
     echo
     echo "To change the default password, run:"
