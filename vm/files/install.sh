@@ -32,6 +32,10 @@ echo Install iobroker
 echo =============================================================
 sudo apt-get -y install net-tools curl wget openssh-server software-properties-common build-essential ca-certificates nano
 curl -sLf https://iobroker.net/install.sh | bash -
+cd /opt/iobroker
+sudo npm install iobroker.kisshome-research
+iob fix
+iob add kisshome-research
 systemctl stop iob
 iob unsetup -y
 # now you can stop the docker and create an image
