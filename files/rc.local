@@ -1,0 +1,40 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# this script is executed at the end of each multiuser runlevel
+# make sure that the script will "exit 0" on success or any other value on error
+#
+# in order to enable or disable this script just change the execution bits
+
+# print the ip address on startup
+_IP=$(hostname -I) || true
+if [ "$_IP" ]; then
+  printf "My IP address is %s\n" "$_IP"
+fi
+
+# runs firstboot.sh only on verty first boot
+if [ ! -e /root/firstboot_done ]; then
+  touch /root/firstboot_done
+  if [ -e /root/firstboot.sh ]; then
+    /root/firstboot.sh
+  fi
+fi
+
+# Checks if the default password changed
+if [ ! -f /etc/shadow ]; then
+    echo "The /etc/shadow file does not exist."
+    exit 0
+fi
+
+if grep -q "PTalgNjj3ZbVhdiGr" /etc/shadow; then
+    echo "The default password for iob user must be changed"
+    echo
+    echo "To change the default password, run:"
+    echo
+    echo "passwd iob"
+    echo
+    echo "and enter your new password. Ensure the new password is strong and secure!"
+fi
+
+exit 0
