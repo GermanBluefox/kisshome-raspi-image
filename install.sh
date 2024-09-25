@@ -38,5 +38,7 @@ sudo iob add kisshome-research
 sudo iob unsetup -y
 
 # Clean up
-rm -rf /opt/kisshome-raspi-image/
+sudo rm -rf /opt/kisshome-raspi-image/
+sudo rm -rf /etc/NetworkManager/system-connections/*
+sudo shutdown -h now
 # now you can stop the raspberrypi and create an image
