@@ -12,6 +12,6 @@ sudo /opt/kisshome-raspi-image/install.sh
 ```
 
 ## After creation
-The ssh login is `iob` and the password is `iob:2024=smart!`. Change the password immediately after the first reboot!
+The ssh login is `iob` and the password is `2024=smart!`. Change the password immediately after the first reboot!
 
 The root password is `2024=smartroot!`.

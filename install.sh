@@ -5,8 +5,13 @@ sudo systemctl enable ssh
 sudo systemctl start ssh
 
 # create iobroker user
-sudo useradd -m -G root iob
-echo "iob:2024=smart!" | sudo chpasswd
+if id "iob" &>/dev/null; then
+  echo "User 'iob' already exists."
+else
+  echo "Creating user 'iob'."
+  sudo useradd -m -G sudo iob
+  echo "iob:2024=smart!" | sudo chpasswd
+fi
 # set root password
 echo "root:2024=smartroot!" | sudo chpasswd
 sudo sed -i 's/^#\?\s*PermitRootLogin\s.*/PermitRootLogin no/' "/etc/ssh/sshd_config"
@@ -17,6 +22,11 @@ echo Setup timezone
 echo =============================================================
 sudo timedatectl set-timezone Europe/Berlin
 sudo dpkg-reconfigure --frontend noninteractive tzdata
+# add time.google.com to ntp service
+sudo sed -i 's/^#NTP=.*/NTP=time.google.com/' /etc/systemd/timesyncd.conf
+
+# Restart systemd-timesyncd service
+sudo systemctl restart systemd-timesyncd
 
 echo =============================================================
 echo Install iobroker
