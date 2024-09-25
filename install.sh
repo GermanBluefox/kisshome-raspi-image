@@ -26,11 +26,7 @@ curl -sLf https://iobroker.net/install.sh | bash -
 cd /opt/iobroker
 sudo iob stop
 # Settings for kisshome
-sudo npm install iobroker.admin@latest --unsafe-perm
-sudo npm install iobroker.kisshome-research
-sudo iob fix
 sudo iob add kisshome-research
-sudo iob u admin
 # End of settings for kisshome
 sudo iob unsetup -y
 
