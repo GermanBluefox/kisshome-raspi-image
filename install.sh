@@ -34,6 +34,7 @@ sudo iob stop
 
 # Settings for kisshome
 sudo iob add kisshome-research
+sudo iob add welcome
 # End of settings for kisshome
 sudo iob unsetup -y
 
