@@ -1,3 +1,4 @@
 .idea
 /kisshome-image.img
-/kisshome-image.zip
+/*.zip
+/*.7z
