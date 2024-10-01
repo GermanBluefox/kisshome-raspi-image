@@ -2,7 +2,7 @@
 Creates Raspberry Pi Image with preinstalled kisshome-research adapter
 
 ## How to start
-```
+```bash
 echo sudo apt update
 sudo apt install -y git
 cd /opt

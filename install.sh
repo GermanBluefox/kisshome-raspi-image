@@ -1,4 +1,8 @@
 #!/bin/bash -e
+# Add time.google.com to NTP service
+sudo sed -i 's/^#NTP=.*/NTP=time.google.com/' /etc/systemd/timesyncd.conf
+sudo systemctl restart systemd-timesyncd
+
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo systemctl enable ssh
@@ -21,10 +25,6 @@ sudo systemctl restart sshd
 # Setup timezone
 sudo timedatectl set-timezone Europe/Berlin
 sudo dpkg-reconfigure --frontend noninteractive tzdata
-
-# Add time.google.com to NTP service
-sudo sed -i 's/^#NTP=.*/NTP=time.google.com/' /etc/systemd/timesyncd.conf
-sudo systemctl restart systemd-timesyncd
 
 # Install iobroker
 sudo apt-get -y install net-tools curl wget openssh-server software-properties-common build-essential ca-certificates nano
