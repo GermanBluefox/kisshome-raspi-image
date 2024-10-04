@@ -8,6 +8,8 @@ Create first with [Raspberry Pi Imager](https://www.raspberrypi.com/software/) t
 
 ![step2](step2.png)
 
+![step3](step2.png)
+
 ```bash
 sudo sed -i 's/^#NTP=.*/NTP=time.google.com/' /etc/systemd/timesyncd.conf
 sudo systemctl restart systemd-timesyncd
@@ -22,7 +24,7 @@ sudo /opt/kisshome-raspi-image/install.sh
 ## Copy image
 Use [HDDRawCopy1.20Portable.exe](https://hddguru.com/software/HDD-Raw-Copy-Tool/HDDRawCopy1.20Portable.exe) or [win32diskimager-1.0.0-install.exe](https://sourceforge.net/projects/win32diskimager/files/latest/download) to make an image.
 
-![step2](step3.png)
+![step4](step4.png)
 
 ## After creation
 The ssh login is `iob` and the password is `2024=smart!`. Change the password immediately after the first reboot!
