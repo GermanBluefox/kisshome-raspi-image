@@ -37,7 +37,7 @@ sudo iob stop
 LINE="iobroker ALL=(ALL) NOPASSWD: /usr/bin/nmcli"
 FILE="/etc/sudoers.d/iobroker"
 # Check if the line is already in the file
-if ! grep -Fxq "$LINE" "$FILE"; then
+if ! sudo grep -Fxq "$LINE" "$FILE"; then
     # If not, add the line to the file
     echo "$LINE" | sudo tee -a "$FILE"
     echo "nmcli added to $FILE"
@@ -48,7 +48,7 @@ fi
 # Settings for kisshome
 sudo iob add kisshome-research
 sudo iob add welcome
-sudo iob add network-settings
+sudo iob add wireless-settings
 sudo iob fix
 # End of settings for kisshome
 sudo iob unsetup -y
