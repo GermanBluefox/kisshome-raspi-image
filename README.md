@@ -8,7 +8,7 @@ Create first with [Raspberry Pi Imager](https://www.raspberrypi.com/software/) t
 
 ![step2](step2.png)
 
-![step3](step2.png)
+![step3](step3.png)
 
 ```bash
 sudo sed -i 's/^#NTP=.*/NTP=time.google.com/' /etc/systemd/timesyncd.conf
