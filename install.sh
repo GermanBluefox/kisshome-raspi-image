@@ -48,7 +48,8 @@ fi
 # Settings for kisshome
 sudo iob add kisshome-research
 sudo iob add welcome
-#sudo iob add network-settings
+sudo iob add network-settings
+sudo iob fix
 # End of settings for kisshome
 sudo iob unsetup -y
 
