@@ -30,28 +30,14 @@ sudo dpkg-reconfigure --frontend noninteractive tzdata
 sudo apt-get -y install net-tools curl wget openssh-server software-properties-common build-essential ca-certificates nano
 curl -sLf https://iobroker.net/install.sh | bash -
 cd /opt/iobroker
-sudo iob stop
-
-# Add to /etc/sudoers.d/iobroker the "iobroker ALL=(ALL) NOPASSWD: /usr/bin/nmcli"
-# Define the line to check/add
-LINE="iobroker ALL=(ALL) NOPASSWD: /usr/bin/nmcli"
-FILE="/etc/sudoers.d/iobroker"
-# Check if the line is already in the file
-if ! sudo grep -Fxq "$LINE" "$FILE"; then
-    # If not, add the line to the file
-    echo "$LINE" | sudo tee -a "$FILE"
-    echo "nmcli added to $FILE"
-else
-    echo "nmcli already exists in $FILE"
-fi
+iob stop
 
 # Settings for kisshome
-sudo iob add kisshome-research
-sudo iob add welcome
-sudo iob add wireless-settings
-sudo iob fix
+iob add kisshome-research
+iob add welcome
+iob add wireless-settings
 # End of settings for kisshome
-sudo iob unsetup -y
+iob unsetup -y
 
 # Clean up
 sudo rm -rf /opt/kisshome-raspi-image/
