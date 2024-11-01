@@ -33,6 +33,7 @@ cd /opt/iobroker
 iob stop
 
 # Settings for kisshome
+iob add kisshome-research
 iob add welcome
 iob add wireless-settings
 # End of settings for kisshome

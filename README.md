@@ -10,6 +10,7 @@ Create first with [Raspberry Pi Imager](https://www.raspberrypi.com/software/) t
 
 ![step3](step3.png)
 
+### ioBroker image
 ```bash
 sudo sed -i 's/^#NTP=.*/NTP=time.google.com/' /etc/systemd/timesyncd.conf
 sudo systemctl restart systemd-timesyncd
@@ -19,6 +20,18 @@ cd /opt
 sudo git clone https://github.com/GermanBluefox/kisshome-raspi-image
 sudo chmod +x /opt/kisshome-raspi-image/install.sh
 sudo /opt/kisshome-raspi-image/install.sh
+```
+
+### Kisshome image
+```bash
+sudo sed -i 's/^#NTP=.*/NTP=time.google.com/' /etc/systemd/timesyncd.conf
+sudo systemctl restart systemd-timesyncd
+echo sudo apt update
+sudo apt install -y git
+cd /opt
+sudo git clone https://github.com/GermanBluefox/kisshome-raspi-image
+sudo chmod +x /opt/kisshome-raspi-image/install.sh
+sudo /opt/kisshome-raspi-image/install_kisshome.sh
 ```
 
 ## Copy image
