@@ -11,7 +11,7 @@ Create first with [Raspberry Pi Imager](https://www.raspberrypi.com/software/) t
 ![step3](step3.png)
 
 ### ioBroker image
-Use hostname `iobroker` and password `2024=smart!` by creation of the image.
+Use hostname `iobroker`, login `iob` and password `2024=smart!` by creation of the image.
 
 ```bash
 sudo sed -i 's/^#NTP=.*/NTP=time.google.com/' /etc/systemd/timesyncd.conf
@@ -25,7 +25,7 @@ sudo /opt/kisshome-raspi-image/install.sh
 ```
 
 ### Kisshome image
-Use hostname `kisshome` and password `2024=smart!` by creation of the image.
+Use hostname `kisshome`, login `iob` and password `2024=smart!` by creation of the image.
 
 ```bash
 sudo sed -i 's/^#NTP=.*/NTP=time.google.com/' /etc/systemd/timesyncd.conf
