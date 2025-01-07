@@ -32,10 +32,10 @@ curl -sLf https://iobroker.net/install.sh | bash -
 cd /opt/iobroker
 iob stop
 
-# Settings for kisshome
+# Additional settings
 iob add welcome
 iob add wireless-settings
-# End of settings for kisshome
+# End of additional settings
 iob unsetup -y
 
 # Clean up
